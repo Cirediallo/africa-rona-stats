@@ -30,20 +30,27 @@ export default class Country extends React.Component{
     
     render(){
         return(
-            <div>
-                <div>
-                    Confirmé:
-                  {this.state.confirmed}
+                <div id="main">
+                    <p>Les informations du Corona Virus en République de Guinée</p>
+                    <div id="content">
+                    
+                        <div className="case">
+                            <div>Confirmé(s)</div>
+                            <div className="case_number">{this.state.confirmed}</div>
+                        </div>
+                        <div className="case">
+                            <div>Retabli(s):</div>
+                            <div className="case_number">{this.state.recovered}</div>
+                        </div>
+                        <div className="case">
+                            <div>Mort(s):</div>
+                            <div className="case_number">{this.state.deaths}</div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div>
-                    Retabli:
-                    {this.state.recovered}
-                </div>
-                <div>
-                    Mort(s):
-                    {this.state.deaths}
-                </div>
-            </div>
+            
+            
         );
     }
     

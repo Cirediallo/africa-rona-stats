@@ -10,8 +10,8 @@ export default function Footer(){
             
             <div id="contact_footer">
                 <h3>Retrouvez-nous sur:</h3>
-                <img src={Tweet} alt="Tweeter Logo" className="rotation" />
-                <img src={Discord} width="50" height="50" alt="Discord Logo" className="rotation" />
+                <a href="https://twitter.com"><img src={Tweet} alt="Tweeter Logo" className="rotation" /></a>
+                <a href="https://discord.gg/YAfQVFF"><img src={Discord} width="50" height="50" alt="Discord Logo" className="rotation" /></a>
             </div>
             
             <div id="info_legales">

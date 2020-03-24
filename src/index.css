@@ -1,55 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body{
-    background-color: #e0ebe8;
+  /*background-color: #e0ebe8;*/
+  font-family: 'Roboto', sans-serif;
+   /*background-color:rgb(244, 246, 248);*/
+   background-color: #e0ebe8;
 }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    width:100%;
-    position:fixed;
-  top:0;
-  width:100%;
-  z-index:1;
-    /*outline: 1px solid black;*/
-  }
-  
-  
-  nav ul{
-    display: flex;
-    
-    margin:0;
-  }
- nav li{
-    
-    list-style-type:none;
-    padding:8px;
-  }
+.coronalogo{
+  animation-name: rotation_infinie;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
 
-  #main{
-    background-color:#e0ebe8 ;
-    height:100vh;
-    
-  }
-  #main p{
-      text-align: center;
-      font-size: 4em;;
-  }
- #content{
+@keyframes rotation_infinie{
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  /*outline: 1px solid black;*/
+  width: 100%;
+  background-color: #e0ebe8;
+}
+
+.line{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul{
+  display: flex;
+  
+  margin:0;
+}
+
+nav li{
+  list-style-type:none;
+  padding:8px;
+}
+
+header .datafrom{
+  text-align: center;
+}
+
+main{margin-top: 160px; background-color: #e0ebe8;}
+
+#main{
+  background-color:#e0ebe8 ;
+  height:100vh;
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.outbreak{
+  /*outline: 1px solid red;*/
+}
+
+#content{
      display: flex;
      justify-content: space-around;
      flex-wrap: wrap;
      width: 60vw;
      margin: 0 auto;
      /*outline: 1px solid green;*/
-     padding-top: 100px;
-     
- }
+     padding: 10px;
+     /*padding-top: 100px;
+     text-align: center;
+     */
+}
 
+.updatetime{
+  color: green;
+}
 .case{
     background-color:rgb(255, 255, 255);
-    border-radius: 5px;
-    width: 200px;
-    height: 200px;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 150px;
+    padding: 20px;
     
 }
 .case div{
@@ -58,9 +97,13 @@ header{
     height: 50%;
 }
 .case_number{
-    font-size: 5em;
     font-weight: bold;
+    font-size: 2em;
 }
+
+.case_number_confirmed{color: rgb(247, 116, 39);}
+.case_number_deaths{color: rgb(236, 49, 75);}
+.case_number_recovered{color: rgb(5, 181, 132);}
 
   footer{
     

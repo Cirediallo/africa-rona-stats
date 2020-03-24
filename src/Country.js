@@ -30,25 +30,35 @@ export default class Country extends React.Component{
     
     render(){
         return(
+            <main>
                 <div id="main">
-                    <p>Les informations du Corona Virus en République de Guinée</p>
-                    <div id="content">
-                    
-                        <div className="case">
-                            <div>Confirmé(s)</div>
-                            <div className="case_number">{this.state.confirmed}</div>
+                    <section id="guinea" className="outbreak">
+                        <div class="headline">
+                            <h3>Guinea Outbreak</h3>
+                            <span className="updatetime">last update: </span>
                         </div>
-                        <div className="case">
-                            <div>Retabli(s):</div>
-                            <div className="case_number">{this.state.recovered}</div>
+                        <div id="content">
+                            <div className="case">
+                                <h4>Confirmé(s)</h4>
+                                <div className="case_number case_number_confirmed">{this.state.confirmed}</div>
+                            </div>
+                            <div className="case">
+                                <h4>Retabli(s):</h4>
+                                <div className="case_number case_number_recovered">{this.state.recovered}</div>
+                            </div>
+                            <div className="case">
+                                <h4>Mort(s):</h4>
+                                <div className="case_number case_number_deaths">{this.state.deaths}</div>
+                            </div>
                         </div>
-                        <div className="case">
-                            <div>Mort(s):</div>
-                            <div className="case_number">{this.state.deaths}</div>
-                        </div>
-                    </div>
-                    
+                    </section>
                 </div>
+                
+                <section className="outbreak">
+
+                </section>
+            </main>
+                
             
             
         );

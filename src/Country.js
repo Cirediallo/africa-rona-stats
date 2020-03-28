@@ -10,8 +10,26 @@ export default class Country extends React.Component{
             confirmed:0,
             deaths: 0,
             recovered: 0,
-            updateTime: Date()
+            updateTime: Date(),
+
+            a_confirmed: 0,
+            a_deaths: 0,
+            a_recovered: 0
         };   
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    async handleChange(event){
+        console.log(event.target.value)
+        const url = "https://covid19.mathdro.id/api";
+        const response = await fetch(url);
+        const data = await response.json();
+
+        
+        this.setState({
+            
+        })
     }
 
     async componentDidMount(){
@@ -59,18 +77,38 @@ export default class Country extends React.Component{
                             </div>
                         </div>
                     </section>
+
+                    <section className="outbreak">
+                        <div>
+                            <label for="countries">Selectionnez un pays: </label>
+                            <select id="countries" onChange={this.handleChange}>
+                                {Object.entries(ListCountry).map(
+                                    ([country, code]) => (
+                                        <option key={code} value={code}>{country}</option>
+                                    )
+
+                                )}
+                            </select>
+                        </div>
+                        
+                        <div id="content">
+                            <div className="case case_number_confirmed">
+                                <h4>Confirmé(s)</h4>
+                                <div className="case_number">{this.state.a_confirmed}</div>
+                            </div>
+                            <div className="case case_number_recovered">
+                                <h4>Retabli(s):</h4>
+                                <div className="case_number">{this.state.a_recovered}</div>
+                            </div>
+                            <div className="case case_number_deaths">
+                                <h4>Mort(s):</h4>
+                                <div className="case_number">{this.state.a_deaths}</div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
                 
-                <section className="outbreak">
-                    <select>
-                        {Object.entries(ListCountry).map(
-                            ([country, code]) => (
-                                <option key={code} value={code}>{country}</option>
-                            )
-
-                        )}
-                    </select>
-                </section>
+                
             </main>
                 
             

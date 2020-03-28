@@ -8,7 +8,7 @@ export default function Header(){
         <header>
             <div className="line">
                 <div>
-                    <img src={CoronaLogo} width="80" height="80" alt="Corona logo" class="coronalogo" />
+                    <img src={CoronaLogo} width="80" height="80" alt="Corona logo" className="coronalogo" />
                 </div>
                 <div>
                     <nav>

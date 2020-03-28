@@ -1,4 +1,5 @@
 import React from 'react'
+import ListCountry from './ListCountries'
 
 
 export default class Country extends React.Component{
@@ -8,7 +9,8 @@ export default class Country extends React.Component{
         this.state = {
             confirmed:0,
             deaths: 0,
-            recovered: 0
+            recovered: 0,
+            updateTime: Date()
         };   
     }
 
@@ -16,13 +18,18 @@ export default class Country extends React.Component{
         const url = "https://covid19.mathdro.id/api/countries/GN";
         const response = await fetch(url);
         const data = await response.json();
+
+        const updateTimeURL = "https://covid19.mathdro.id/api";
+        const updateTimeFetch = await fetch(updateTimeURL);
+        const el = await updateTimeFetch.json();
+
         //console.log(data)
 
         this.setState({
             confirmed: data.confirmed.value,
             recovered: data.recovered.value,
-            deaths: data.deaths.value
-            
+            deaths: data.deaths.value,
+            updateTime: el.lastUpdate
         })
         
     }
@@ -33,29 +40,36 @@ export default class Country extends React.Component{
             <main>
                 <div id="main">
                     <section id="guinea" className="outbreak">
-                        <div class="headline">
+                        <div className="headline">
                             <h3>Guinea Outbreak</h3>
-                            <span className="updatetime">last update: </span>
+        <span className="updatetime">last update: {this.state.updateTime}</span>
                         </div>
                         <div id="content">
-                            <div className="case">
+                            <div className="case case_number_confirmed">
                                 <h4>Confirmé(s)</h4>
-                                <div className="case_number case_number_confirmed">{this.state.confirmed}</div>
+                                <div className="case_number">{this.state.confirmed}</div>
                             </div>
-                            <div className="case">
+                            <div className="case case_number_recovered">
                                 <h4>Retabli(s):</h4>
-                                <div className="case_number case_number_recovered">{this.state.recovered}</div>
+                                <div className="case_number">{this.state.recovered}</div>
                             </div>
-                            <div className="case">
+                            <div className="case case_number_deaths">
                                 <h4>Mort(s):</h4>
-                                <div className="case_number case_number_deaths">{this.state.deaths}</div>
+                                <div className="case_number">{this.state.deaths}</div>
                             </div>
                         </div>
                     </section>
                 </div>
                 
                 <section className="outbreak">
+                    <select>
+                        {Object.entries(ListCountry).map(
+                            ([country, code]) => (
+                                <option key={code} value={code}>{country}</option>
+                            )
 
+                        )}
+                    </select>
                 </section>
             </main>
                 

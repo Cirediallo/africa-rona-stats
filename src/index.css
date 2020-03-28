@@ -81,7 +81,7 @@ main{margin-top: 160px; background-color: #e0ebe8;}
 }
 
 .updatetime{
-  color: green;
+  color: blue;
 }
 .case{
     background-color:rgb(255, 255, 255);
@@ -101,9 +101,29 @@ main{margin-top: 160px; background-color: #e0ebe8;}
     font-size: 2em;
 }
 
-.case_number_confirmed{color: rgb(247, 116, 39);}
-.case_number_deaths{color: rgb(236, 49, 75);}
-.case_number_recovered{color: rgb(5, 181, 132);}
+.case_number_confirmed{
+  color: rgb(247, 116, 39); 
+  background-color: #fff5f5;
+}
+.case_number_confirmed  h4 {
+  border: 0 solid #e2e8f0
+ 
+}
+.case_number_deaths , .case_number_deaths  h4{
+  /*color: rgb(236, 49, 75);*/
+  color: #718096;
+  background-color: #edf2f7
+}
+.case h4{
+  font-weight: 600;
+}
+.case_number_recovered{
+  color: rgb(5, 181, 132);
+  background-color: #f0fff4;
+}
+.case_number_recovered  h4{
+  color: rgb(5, 181, 132);
+}
 
   footer{
     

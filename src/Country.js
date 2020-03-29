@@ -22,13 +22,16 @@ export default class Country extends React.Component{
 
     async handleChange(event){
         console.log(event.target.value)
-        const url = "https://covid19.mathdro.id/api";
-        const response = await fetch(url);
-        const data = await response.json();
-
+        const url = `https://covid19.mathdro.id/api/countries/${event.target.value}`;
+        
+        
+        const response = await fetch(url)
+        const data = await response.json()
         
         this.setState({
-            
+            a_recovered: data.recovered.value,
+            a_deaths: data.deaths.value,
+            a_confirmed: data.confirmed.value
         })
     }
 
@@ -37,9 +40,14 @@ export default class Country extends React.Component{
         const response = await fetch(url);
         const data = await response.json();
 
+        const a_url = "https://covid19.mathdro.id/api/countries/DZ";
+        const a_response = await fetch(a_url);
+        const a_data = await a_response.json();
+        
+
         const updateTimeURL = "https://covid19.mathdro.id/api";
         const updateTimeFetch = await fetch(updateTimeURL);
-        const el = await updateTimeFetch.json();
+        const date = await updateTimeFetch.json();
 
         //console.log(data)
 
@@ -47,7 +55,12 @@ export default class Country extends React.Component{
             confirmed: data.confirmed.value,
             recovered: data.recovered.value,
             deaths: data.deaths.value,
-            updateTime: el.lastUpdate
+            updateTime: date.lastUpdate,
+
+            a_confirmed: a_data.confirmed.value,
+            a_recovered: a_data.recovered.value,
+            a_deaths: a_data.deaths.value
+
         })
         
     }

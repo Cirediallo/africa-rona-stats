@@ -1,6 +1,7 @@
 import React from 'react'
 import ListCountry from './ListCountries'
-
+import Form from 'react-bootstrap/Form';
+import moment from 'moment';
 
 export default class Country extends React.Component{
     constructor(props){
@@ -68,67 +69,104 @@ export default class Country extends React.Component{
     
     render(){
         return(
-            <main>
-                <div id="main">
-                    <section id="guinea" className="outbreak">
-                        <div className="headline">
-                            <h3>Guinea Outbreak</h3>
-        <span className="updatetime">last update: {this.state.updateTime}</span>
-                        </div>
-                        <div id="content">
-                            <div className="case case_number_confirmed">
-                                <h4>Confirmé(s)</h4>
-                                <div className="case_number">{this.state.confirmed}</div>
-                            </div>
-                            <div className="case case_number_recovered">
-                                <h4>Retabli(s):</h4>
-                                <div className="case_number">{this.state.recovered}</div>
-                            </div>
-                            <div className="case case_number_deaths">
-                                <h4>Mort(s):</h4>
-                                <div className="case_number">{this.state.deaths}</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="outbreak">
-                        <div>
-                            <label for="countries">Selectionnez un pays: </label>
-                            <select id="countries" onChange={this.handleChange}>
-                                {Object.entries(ListCountry).map(
-                                    ([country, code]) => (
-                                        <option key={code} value={code}>{country}</option>
-                                    )
-
-                                )}
-                            </select>
-                        </div>
-                        
-                        <div id="content">
-                            <div className="case case_number_confirmed">
-                                <h4>Confirmé(s)</h4>
-                                <div className="case_number">{this.state.a_confirmed}</div>
-                            </div>
-                            <div className="case case_number_recovered">
-                                <h4>Retabli(s):</h4>
-                                <div className="case_number">{this.state.a_recovered}</div>
-                            </div>
-                            <div className="case case_number_deaths">
-                                <h4>Mort(s):</h4>
-                                <div className="case_number">{this.state.a_deaths}</div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                
-                
-            </main>
-                
-            
-            
-        );
-    }
-    
+<main className="container-fluid">
+    <h2 className="text-center text-dark">Informations sur le cas du Covid-19 en Afrique</h2><br></br>
+    <h6 className="text-right text-dark">Dernière mise à jour: {moment().format('MMMM Do YYYY, h:mm:ss a')}</h6>
+    <div className="container">
+    <h4 className="text-left text-dark">Éclosion en Guinée:</h4><br></br>
+  <div className="row justify-content-md-center">
+    <div className="col-xs-1 col-md-3" >
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-info text-white">
+          <h3 className="card-text" className="text-center">Confirmé(s)</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-info">{this.state.confirmed}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    <div className="col-xs-1 col-md-3" >
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-success text-white">
+          <h3 className="card-text" className="text-center">Retabli(s):</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-success">{this.state.recovered}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    <div className="col-xs-1 col-md-3" >
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-danger text-white">
+          <h3 className="card-text" className="text-center">Mort(s):</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-danger">{this.state.deaths}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <br></br>                  
+    <div className="container">
+    <h4 className="text-left text-dark">Les autres pays :</h4><br></br>
+    <Form className="row justify-content-md-center">  
+    <div className="form-inline my-2 my-lg-0">
+        <Form.Label className="mr-sm-2"><h4>Selectionnez un pays:</h4></Form.Label>
+        <Form.Control as="select" size="sm" custom onChange={this.handleChange}>
+        {Object.entries(ListCountry).map(
+            ([country, code]) => (
+                <option key={code} value={code}>{country}</option>
+            )
+            )}
+        </Form.Control>
+    </div>
+    </Form> 
+    <br></br>
+  <div className="row justify-content-md-center">
+    <div className="col-xs-1 col-md-3">
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-info text-white">
+          <h3 className="card-text" className="text-center">Confirmé(s)</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-info">{this.state.a_confirmed}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    <div className="col-xs-1 col-md-3" >
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-success text-white">
+          <h3 className="card-text" className="text-center">Retabli(s):</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-success">{this.state.a_recovered}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    <div className="col-xs-1 col-md-3" >
+      <div className="card mb-4 shadow-sm">
+      <div className="card-head bg-danger text-white">
+          <h3 className="card-text" className="text-center">Mort(s):</h3>
+        </div>
+        <div className="card-body">
+          <h3 className="card-text" className="text-center text-danger">{this.state.a_deaths}</h3>
+          <br></br>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>  
+        <br></br>
+        <p className="row justify-content-md-end">Sources de données <a href="https://github.com/mathdroid/covid-19-api" target="_blank" rel="noopener noreferrer">Muhamed Mustadi</a></p>
+</main>
+);
+}
 };
 /*
 const countries = {

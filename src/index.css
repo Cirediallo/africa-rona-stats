@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+
 body{
   /*background-color: #e0ebe8;*/
   font-family: 'Roboto', sans-serif;
@@ -22,37 +23,19 @@ body{
   0%   {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
 }
-
 header {
   position: fixed;
   z-index: 1;
   top: 0;
   /*outline: 1px solid black;*/
-  width: 100%;
+  width: 98.2%;
   background-color: #e0ebe8;
 }
-
-.line{
-  display: flex;
-  justify-content: space-between;
+.sizeTextNav {
+  font-size: 1.5rem;
 }
 
-nav ul{
-  display: flex;
-  
-  margin:0;
-}
-
-nav li{
-  list-style-type:none;
-  padding:8px;
-}
-
-header .datafrom{
-  text-align: center;
-}
-
-main{margin-top: 160px; background-color: #e0ebe8;}
+main{margin-top: 120px; background-color: #e0ebe8;}
 
 #main{
   background-color:#e0ebe8 ;
@@ -63,82 +46,3 @@ main{margin-top: 160px; background-color: #e0ebe8;}
   text-align: center;
 }
 
-.outbreak{
-  /*outline: 1px solid red;*/
-}
-
-#content{
-     display: flex;
-     justify-content: space-around;
-     flex-wrap: wrap;
-     width: 60vw;
-     margin: 0 auto;
-     /*outline: 1px solid green;*/
-     padding: 10px;
-     /*padding-top: 100px;
-     text-align: center;
-     */
-}
-
-.updatetime{
-  color: blue;
-}
-.case{
-    background-color:rgb(255, 255, 255);
-    border-radius: 10px;
-    min-width: 200px;
-    min-height: 150px;
-    padding: 20px;
-    
-}
-.case div{
-    /*outline: 1px solid green;*/
-    text-align: center;
-    height: 50%;
-}
-.case_number{
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.case_number_confirmed{
-  color: rgb(247, 116, 39); 
-  background-color: #fff5f5;
-}
-.case_number_confirmed  h4 {
-  border: 0 solid #e2e8f0
- 
-}
-.case_number_deaths , .case_number_deaths  h4{
-  /*color: rgb(236, 49, 75);*/
-  color: #718096;
-  background-color: #edf2f7
-}
-.case h4{
-  font-weight: 600;
-}
-.case_number_recovered{
-  color: rgb(5, 181, 132);
-  background-color: #f0fff4;
-}
-.case_number_recovered  h4{
-  color: rgb(5, 181, 132);
-}
-
-  footer{
-    
-    /*outline: 1px solid red;*/
-    display: flex;
-    justify-content: space-around;
-  }
- 
-  #info_legales{
-    /*outline: 1px solid black;*/
-      text-align: center;
-      padding:0;
-      margin-left: 30px;
-  }
-  #contact_footer{
-    /*outline: 1px solid green;*/
-    text-align: center;
-  }

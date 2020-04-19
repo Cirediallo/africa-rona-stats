@@ -1,9 +1,9 @@
 import React from 'react';
-import Tweet from './tweet.png';
-import Discord from './discord.png';
-import './index.css'
+import Tweet from '../images/tweet.png';
+import Discord from '../images/discord.png';
+import '../index.css'
 
-export default function Footer(){
+const Footer = () => {
     return (
       
          <div className= "text-center">
@@ -16,3 +16,4 @@ export default function Footer(){
         </div>
     )
 }
+export default Footer;

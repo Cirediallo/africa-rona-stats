@@ -1,6 +1,6 @@
 import React from 'react'
-import './index.css'
-import CoronaLogo from './corona.png'
+import '../index.css'
+import CoronaLogo from '../images/corona.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar} from "react-bootstrap";
 
